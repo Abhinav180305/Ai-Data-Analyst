@@ -862,6 +862,46 @@ def query_stream(req: QueryRequest, current_user: dict = Depends(get_current_use
             "content": json.dumps({"code": turn.get("code", ""), "explanation": turn.get("explanation", "")}),
         })
 
+    def moderate(question):
+        """
+        Check whether the user's question is appropriate
+        for the AI Data Analyst application.
+        """
+
+        question = question.strip().lower()
+
+        if not question:
+            return {
+               "flagged": True,
+                "reason": "Empty question"
+            }
+
+        blocked_keywords = [
+           "hack",
+           "malware",
+           "ransomware",
+           "phishing",
+           "steal password",
+           "credit card fraud"
+        ]
+
+        for keyword in blocked_keywords:
+           if keyword in question:
+               return {
+                   "flagged": True,
+                   "reason": "Question is not appropriate for this application"
+                }
+
+        return {
+           "flagged": False,
+           "reason": ""
+        }
+
+
+
+
+    
+
     def gen():
         # Moderation runs on a background thread starting immediately, in
         # parallel with code generation — instead of waiting for it to finish
