@@ -1,0 +1,24 @@
+.health-card {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px;
+  margin-bottom: 16px;
+  background: var(--panel-alt);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--teal);
+}
+.health-grade-A { border-left-color: #4FD1C5; }
+.health-grade-B { border-left-color: #E8A33D; }
+.health-grade-C { border-left-color: #E8A33D; }
+.health-grade-D { border-left-color: #E8697D; }
+.health-grade-F { border-left-color: #E8697D; }
+.health-grade {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--text);
+  line-height: 1;
+}
+.health-score { font-size: 12px; font-weight: 600; margin-bottom: 6px; }
+.health-row { font-size: 11px; color: var(--text-dim); line-height: 1.5; }
