@@ -1,7 +1,7 @@
-@import "./styles/layout.css";
-@import "./styles/auth.css";
-@import "./styles/chat.css";
-@import "./styles/dashboard.css";
-@import "./styles/ml.css";
-@import "./styles/toast.css";
-@import "./styles/health.css";
+@import "./layout.css";
+@import "./auth.css";
+@import "./chat.css";
+@import "./dashboard.css";
+@import "./ml.css";
+@import "./toast.css";
+@import "./health.css";
